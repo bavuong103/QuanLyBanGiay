@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SHOPONLINE 2020</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    @*<environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>*@
+    <script src="~/template/js/jquery.min.js"></script>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+</head>
+<body>
+
+    <div class="container">
+        <header class="nn-header row" style="height: 90px;">
+            <div class="nn-company">
+                <h1>Website administration tool</h1>
+            </div>
+        </header>
+
+        <div class="navbar navbar-inverse row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Trang chủ</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản lý <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Admin/Product">Hàng hóa</a></li>
+                            <li><a href="/Admin/Supplier">Nhà cung cấp</a></li>
+                            <li><a href="/Admin/Category">Chủng loại</a></li>
+                            <li><a href="/Admin/Customer">Khách hàng</a></li>
+                            <li><a href="/Admin/Order">Hóa đơn</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thống kê <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Admin/Inventory/ByCategory">Theo loại</a></li>
+                            <li><a href="/Admin/Inventory/BySupplier">Theo hãng</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Admin/Revenue/ByProduct">Theo từng mặt hàng</a></li>
+                            <li><a href="/Admin/Revenue/ByCategory">Theo từng loại hàng</a></li>
+                            <li><a href="/Admin/Revenue/BySupplier">Theo từng hãng</a></li>
+                            <li><a href="/Admin/Revenue/ByCustomer">Theo từng khách hàng</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Admin/Revenue/ByYear">Theo từng năm</a></li>
+                            <li><a href="/Admin/Revenue/ByQuarter">Theo từng quí</a></li>
+                            <li><a href="/Admin/Revenue/ByMonth">Theo từng tháng</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tài khoản <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Admin/Master/Login">Đăng xuất</a></li>
+                            <li><a href="/Admin/Master/Change">Đổi mật khẩu</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Admin/Master">Quản lý tài khoản</a></li>
+                            <li><a href="/Admin/Role">Quản lý vai trò</a></li>
+                            <li><a href="/Admin/WebAction">Quản lý chức năng</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Admin/MasterRole">Phân vai trò</a></li>
+                            <li><a href="/Admin/WebActionRole">Phân quyền sử dụng</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nn-sheet row">
+            <article class="nn-body">
+                @RenderBody()
+            </article>
+        </div>
+
+        <footer class="panel panel-default row">
+            <div class="panel-heading">
+                <p class="text-center">SHOPONLINE 2020 - All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>*@
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

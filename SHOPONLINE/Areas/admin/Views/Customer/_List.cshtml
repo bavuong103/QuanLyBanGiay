@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<table class="table table-hover table-condensed table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Activated?</th>
+            <th>Photo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SHOPONLINE.Models.ShopOnline.Customer Item in ViewBag.Items)
+        {
+            <tr>
+                <td>@Item.Id</td>
+                <td>@Item.Fullname</td>
+                <td>@Item.Email</td>
+                <td>@(Item.Activated ? "Yes" : "No")</td>
+                <td>@Item.Photo</td>
+                <td>
+                    <a class="btn btn-sm btn-danger" href="/Admin/Customer/Edit/@Item.Id"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a class="btn btn-sm btn-warning" href="/Admin/Customer/Delete/@Item.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

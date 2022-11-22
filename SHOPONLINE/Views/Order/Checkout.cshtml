@@ -1,0 +1,169 @@
+﻿
+@{
+    Layout = "~/Views/Shared/SiteLayout.cshtml";
+    @model SHOPONLINE.Models.ShopOnline.Order
+
+    @using Microsoft.AspNetCore.Http
+    @inject IHttpContextAccessor httpContextAccessor
+}
+
+@{
+    var amount = 0.0;
+    var items = SessionHelper.GetObjectFromJson<List<Item>>(@httpContextAccessor.HttpContext.Session, "cart");
+    if (items != null)
+    {
+        amount = items.Sum(p => p.Product.UnitPrice * p.Quantity * (1 - p.Product.Discount));
+    }
+}
+
+<link href="~/template/css/cart.css" rel="stylesheet" />
+<main id="main" class="main" style="padding-top:130px">
+    <div class="clearfix"></div>
+
+    <section class="content">
+        <div class="container">
+            <div class="payment row">
+                <div class="height10"></div>
+                <h1 class="df regular cart-title">ĐỊA CHỈ GIAO HÀNG</h1>
+                <div class="bound-payment">
+                    <div class="box-info">
+                        @Html.ValidationSummary(true)
+                        @using (Html.BeginForm())
+                        {
+                            if (items != null && items.Count > 0)
+                            {
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <span class="bold" style="font-size: 20px;">Thông tin người đặt hàng </span>
+                                    <table class="tbl-payment row">
+                                        <tbody>
+                                            <tr></tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td class="label">Họ và tên</td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.Receiver, new { @class = "form-control size ='38'" })
+                                                    @Html.ValidationMessageFor(m => m.Receiver)
+                                                </td>
+                                                @*<td class="value"><input id="sender_name" name="sender_name" size="38" type="text"></td>*@
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Điện thoại</td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.Customer.Sdt, new { @class = "form-control size ='38'" })
+                                                    @Html.ValidationMessageFor(m => m.Customer.Sdt)
+                                                </td>
+                                                @*<td class="value"><input id="sender_telephone" name="sender_telephone" size="38" type="text"></td>*@
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Email</td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.Customer.Email, new { @class = "form-control size ='38'" })
+                                                    @Html.ValidationMessageFor(m => m.Customer.Email)
+                                                </td>
+                                                @*<td class="value"><input id="sender_email" name="sender_email" size="38" type="text"></td>*@
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Địa chỉ</td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control size ='38'" })
+                                                    @Html.ValidationMessageFor(m => m.Address)
+                                                </td>
+                                                @*<td class="value"><input id="sender_address" name="sender_address" size="38" type="text"></td*@>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <p><span style="font-size:20px;"><strong>Thông tin Giỏ hàng &nbsp;</strong></span></p>
+                                    <table class="tbl-payment row">
+                                        <tbody>
+                                            <tr class="tbl-header">
+                                                <td class="name">Sản phẩm</td>
+                                                <td class="center price">Đơn giá</td>
+                                                <td class="center quantyti">Số lượng</td>
+                                                <td class="center total">Cộng</td>
+                                            </tr>
+                                            @foreach (var p in items.ToList())
+                                            {
+
+                                                <tr class="cart-item ">
+                                                    <td class="name">
+                                                        @p.Product.Name
+                                                    </td>
+                                                    <td class="center price">
+                                                        <div class="price-buy pull-right">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", p.Product.UnitPrice) VNĐ</div>
+                                                    </td>
+                                                    <td class="center quantity pull-right">
+                                                        <div class="center">@String.Format("{0:n0}", @p.Quantity)</div>
+                                                    </td>
+                                                    <td class="total">
+                                                        <div class="pull-right">
+                                                            @String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", @p.Product.UnitPrice * @p.Quantity * (1 - @p.Product.Discount)) VNĐ
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div id="box-total-cart">
+                                        <span class="order-value pull-right">
+                                            <span style="color:green">
+                                                Tổng tiền:
+                                                @if (Model != null)
+                                                {
+                                                    @Html.HiddenFor(m => m.Amount, new { @class = "form-control", Value = Model.Amount })
+                                                    <span>
+                                                        @String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", Model.Amount) VNĐ
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    @Html.HiddenFor(m => m.Amount, new { @class = "form-control", Value = amount })
+                                                    <span>
+                                                        @String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", amount) VNĐ
+                                                    </span>
+                                                }
+                                            </span>
+                                            @Html.HiddenFor(m => m.OrderDate, new { @class = "form-control" })
+                                            @Html.HiddenFor(m => m.RequireDate, new { @class = "form-control" })
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <table class="tbl-payment">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2"><div style="border: 2px solid #e1e1e1;"></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label" style="float: left; width: 9%;">Ghi chú</td>
+                                                <td class="value" style="float: left; width: 91%;}">
+                                                    @*<textarea id="recipients_comments" name="recipients_comments"></textarea>*@
+                                                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="panel panel-default">
+                                    <div class="panel-body text-center">
+                                        <span style="color:green; font-size:20px">Bạn vẫn chưa mua hàng. Hãy quay lại để tiếp tục lựa chọn, Bạn nhé!</span>
+                                    </div>
+                                </div>
+                            }
+                            <div class="clearfix"></div>
+                            <a style="" class="btn-cart back" href="javascript:void(0);" onclick="history.go(-1)">Quay lại</a>
+                            if (items != null && items.Count > 0)
+                            {
+                                <button style="margin-left: 10px; border:none" class="btn-cart continue fr">Tiếp tục</button>
+                            }
+                        }
+                    </div><!--end: .box-info-->
+                </div><!--end: .bound-payment-->
+            </div>
+        </div>
+    </section>
+</main>

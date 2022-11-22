@@ -1,0 +1,64 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-briefcase"></span>
+            Role Granting
+        </h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label>Master</label>
+                @Html.DropDownList("MasterId", null, new { @class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Roles</label>
+                <ul class="list-unstyled">
+                    @foreach (SHOPONLINE.Models.ShopOnline.Role r in ViewBag.Roles)
+                    {
+                        <li>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="@r.Id" /> @r.Name
+                            </label>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+        }
+    </div>
+    <div class="panel-footer"></div>
+</div>
+
+<script>
+    $(function () {
+        $("#MasterId").change(function () {
+            var mid = $(this).val();
+            $.ajax({
+                url: "/Admin/MasterRole/GetRoles",
+                data: { MasterId: mid },
+                success: function (response) {
+                    $(":checkbox").prop("checked", false);
+                    $(response).each(function (index, item) {
+                        $(":checkbox[value=" + item + "]").prop("checked", true);
+                    });
+                }
+            });
+        });
+        $("#MasterId").change();
+
+        $(":checkbox").click(function () {
+            var roleId = $(this).val();
+            var status = $(this).prop("checked");
+            var masterId = $("#MasterId").val();
+            $.ajax({
+                url: "/Admin/MasterRole/Update",
+                data: { MasterId: masterId, RoleId: roleId, Status: status },
+                success: function (response) {
+                    alert("Phân vai trò thành công !");
+                }
+            });
+        });
+    });
+</script>

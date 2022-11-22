@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SHOPONLINE.Models.ShopOnline.Product>
+@{
+    Layout = "~/Views/Shared/SiteLayout.cshtml";
+}
+<main id="main" class="main" style="padding-top:130px">
+    <div class="clearfix"></div>
+    <div class="height5"></div>
+    <section class="content">
+        <div class="container">
+            <div class="product">
+                <div id="sidebar" class="fl col-md-12 col-sm-4 col-md-3 col-lg-3">
+                    <div class="product-sidebar">
+                        <div id="main-menu-product"><h5>Danh mục Sản phẩm</h5></div>
+                        <ul class="cats-menu">
+                            @foreach (SHOPONLINE.Models.ShopOnline.Category c in ViewBag.Categories)
+                            {
+                                <li><a href="/Product/ListByCategory/@c.Id" title="@c.NameVN">@c.NameVN</a></li>
+                            }
+                        </ul>
+                        <div class="height20"></div>
+                    </div><!--end: .product-sidebar-->
+                    <div class="height10"></div>
+                    <div class="product-position-1">
+                    </div><!--end: .product-position-1-->
+                </div>
+
+                <div id="content" class="fr col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                    <div class="row">
+                        <div class="product-position-2">
+                        </div><!--end: .product-position-2-->
+
+                        <div class="block-breadcrumb">
+                            <i class="fa fa-home"></i><a class="df" title="Trang chủ" rel="nofollow" href="/"> Trang chủ</a>
+                            > <i style="font-style:italic"> Tìm kiếm </i>
+                        </div>
+                        <div class="box-products">
+                            <div class="bp-title">
+                                <h1 class="df fl regular uppercase"> TÌM KIẾM: @ViewBag.Keywords</h1>
+                            </div>
+
+                            <div class="height15"></div>
+                            @foreach (var p in Model)
+                            {
+                                <div class="product-item product-item-1 fl col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="row">
+
+                                        <a title="@p.Name" class="thumb" href="/Product/Detail/@p.Id">
+                                            <img alt="@p.Name" class="thumb" style="height:100%; width:100%; padding:2px" src="~/images/products/@p.Image" onerror="this.src='images/noimages.jpg'" />
+                                        </a>
+                                        <h2 class="title df regular"><a title="@p.Name" class="df" href="/Product/Detail/@p.Id" style="color:#0c8469">@p.Name</a></h2>
+
+                                        <div class="price">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", @p.UnitPrice) VNĐ</div>
+                                        <div class="clearfix"></div>
+                                        @*<div style="text-align:center"><a class="add-cart" href="/" title="Thêm vào giỏ">Đặt hàng <i class="fa fa-shopping-cart"></i></a></div>*@
+                                        <div style="text-align:center">
+                                            <button class="btn btn-sm btn-danger" data-add-to-cart="@p.Id"> Đặt hàng</button>
+                                        </div>
+                                    </div><!--end: .product-item-->
+                                </div>
+
+                            }
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="height5"></div>
+                    </div>
+                </div><!--end: #content-->
+            </div>
+            <!--end: #product-->
+        </div>
+    </section>
+</main>
+<script>
+    $(function () {
+        $("button[data-add-to-cart]").click(function () {
+            var pid = $(this).attr("data-add-to-cart");
+            $.ajax({
+                url: "/ShoppingCart/Add",
+                data: { id: pid },
+                type: "post",
+                success: function (response) {
+                    $(".nn-cart #count").html(response.Count);
+                }
+            });
+        });
+    });
+</script>

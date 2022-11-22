@@ -1,0 +1,132 @@
+﻿@{
+    Layout = "~/Views/Shared/SiteLayout.cshtml";
+    @using Microsoft.AspNetCore.Http
+    @inject IHttpContextAccessor httpContextAccessor
+}
+
+@{
+    var amount = 0.0;
+    var items = SessionHelper.GetObjectFromJson<List<Item>>(@httpContextAccessor.HttpContext.Session, "cart");
+    if (items != null)
+    {
+        amount = items.Sum(p => p.Product.UnitPrice * p.Quantity * (1 - p.Product.Discount));
+    }
+}
+<link href="~/template/css/cart.css" rel="stylesheet" />
+<main id="main" class="main" style="padding-top:130px">
+    <div class="clearfix"></div>
+
+    <section class="content">
+        <div class="container">
+            <div class="shop-cart row">
+
+                <div class="block-breadcrumb">
+                    <ul class="df">
+                        <li><i class="fa fa-home"></i><a class="df" title="Trang chủ" rel="nofollow" href="/">Trang chủ</a> > Giỏ hàng</li>
+                        @*<li class="spacer">&nbsp;</li>
+                            <li><a class="df" title="Cart" href="">Cart</a></li>*@
+                    </ul>
+                </div>
+                <div class="height10"></div>
+                @*@if (ShoppingCart.Cart.Count > 0)
+                    {*@
+
+                <table class="tbl-cart">
+                    <tbody>
+                        <tr class="tbl-header">
+                            <td class="name">Sản phẩm</td>
+                            <td class="center price">Đơn giá</td>
+                            <td class="center quantyti">Số lượng</td>
+                            <td class="center total">Tổng</td>
+                            <td class="center delete">Xóa</td>
+                        </tr>
+
+                        @if (items != null)
+                        {
+                            foreach (var p in SessionHelper.GetObjectFromJson<List<Item>>(@httpContextAccessor.HttpContext.Session, "cart"))
+                            {
+
+                            <tr class="cart-item ">
+                                <td class="name">
+                                    <a class="df" href="/Product/Detail/@p.Product.Id" title="">
+                                        <img class="thumb" alt="" src="~/images/products/@p.Product.Image" onerror="this.src=''">
+                                        @p.Product.Name
+                                    </a><br>
+                                </td>
+                                <td class="center price">
+
+                                    <div class="price-buy">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", p.Product.UnitPrice) VNĐ</div>
+                                </td>
+                                <td class="center quantity"><input name="quantity[354]" class="quantity-value" style="width:70px; text-align:center" value="@p.Quantity" min="1" type="number" data-update-cart="@p.Product.Id"></td>
+                                <td class="center total">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", p.Product.UnitPrice * p.Quantity * (1 - p.Product.Discount)) VNĐ</td>
+                                <td class="center delete">
+                                    <button class="btn btn-sm btn-warning" data-remove-from-cart="@p.Product.Id">
+                                        Xóa
+                                    </button>
+                            </tr>
+                            }
+                        }
+
+                        <tr class="tbl-footer">
+                            <td colspan="5">
+                                <div class="height15"></div>
+                                <a class="continue-shopping fl" href="/">Tiếp tục mua hàng</a>
+                                <a class="update-cart fr" href="/ShoppingCart/Clear">Xóa giỏ hàng</a>
+                                <div class="height15"></div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div id="box-total-cart">
+                    Tổng thanh toán:<span id="amount" class="order-value">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}",amount ) VNĐ</span>
+                    <div class="height7"></div>
+                    <a class="btn-cart ok" href="~/Order/Checkout">Thanh toán</a>
+                </div>
+                <div class="height20"></div>
+                <div class="height20"></div>
+                <div class="height20"></div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    $("button[data-remove-from-cart]").click(function () {
+        var pid = $(this).attr("data-remove-from-cart");
+        $.ajax({
+            url: "/ShoppingCart/Remove",
+            data: { id: pid },
+            type: "post",
+            success: function (response) {
+                $(".nn-cart #count").html(response.Count);
+                $("#amount").html(response.Amount);
+            }
+        });
+        /*
+        * Hiệu ứng xóa <tr>
+        */
+        $(this).parents("tr").hide(500);
+    });
+
+    $("input[data-update-cart]").change(function () {
+        var pid = $(this).attr("data-update-cart");
+        var qty = $(this).val();
+        var tr = $(this).parents("tr");
+        $.ajax({
+            url: "/ShoppingCart/Update",
+            data: { id: pid, newqty: qty },
+            type: "post",
+            success: function (response) {
+                $(".nn-cart #count").html(response.Count);
+                $("#amount").html(response.Amount);
+
+                // Cập nhật thành tiền của sản phẩm
+                tr.find("td:eq(3)").html(response.ItemAmount);
+            }
+        });
+    });
+
+</script>

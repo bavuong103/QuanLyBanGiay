@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Inventory";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Revenue</h2>
+
+<table class="table table-hover table-condensed table-striped">
+    <thead>
+        <tr>
+            <th>Group</th>
+            <th>Value</th>
+            <th>Count</th>
+            <th>Min Price</th>
+            <th>Max Price</th>
+            <th>Average Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Group</td>
+                <td>@Html.FormatValue(i.Value, "${0:#,###.#0}")</td>
+                <td>@i.Count</td>
+                <td>@Html.FormatValue(i.MinPrice, "${0:#,###.#0}")</td>
+                <td>@Html.FormatValue(i.MaxPrice, "${0:#,###.#0}")</td>
+                <td>@Html.FormatValue(i.AvgPrice, "${0:#,###.#0}")</td>
+            </tr>
+        }
+    </tbody>
+</table>

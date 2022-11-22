@@ -1,0 +1,164 @@
+﻿@model SHOPONLINE.Models.ShopOnline.Customer
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Manager</h2>
+
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#edit" aria-controls="home" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-edit"></span>
+                Edition
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#list" aria-controls="profile" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-list"></span>
+                List
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="edit">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Customer Edition
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Index", "Customer",
+                      FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        if (!Html.ValidationSummary().ToString().Contains(":none"))
+                        {
+                            <div class="pull-right label label-danger">
+
+                                @Html.ValidationSummary()
+
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label>Id</label>
+                            @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Fullname</label>
+                            @Html.TextBoxFor(m => m.Fullname, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Photo</label>
+                            <input type="file" name="upPhoto" />
+                            @Html.HiddenFor(m => m.Photo, new { @class = "form-control" })
+                        </div>
+                        @Html.HiddenFor(m => m.Activated, new { @class = "form-control" })
+                        <div class="form-group">
+                            <div class="text-center btn-crud">
+                                <button class="btn btn-default" data-action="Insert">Insert</button>
+                                <button class="btn btn-default" data-action="Update">Update</button>
+                                <button class="btn btn-default" data-action="Delete">Delete</button>
+                                <button class="btn btn-default" data-action="Index">Reset</button>
+                            </div>
+                            <script>
+                                $(function () {
+                                    $("button[data-action]").click(function () {
+                                        var action = $(this).attr("data-action");
+                                        this.form.action = "/Admin/Customer/" + action;
+                                    });
+                                });
+                            </script>
+                        </div>
+                    }
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Customer List
+                    </h3>
+                </div>
+                <div class="list"></div>
+                <div class="panel-footer">
+                    <ul class="pager">
+                        <li><a href="#"><span class="glyphicon glyphicon-hand-up"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-hand-left"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-hand-right"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-hand-down"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    pageNo = 0;
+    pageSize = 10;
+    pageCount = 5;
+    function loadPage() {
+        $.ajax({
+            url: "/Admin/Customer/GetList",
+            data: { PageNo: pageNo, PageSize: pageSize },
+            success: function (response) {
+                $(".list").html(response);
+            }
+        });
+    }
+
+    $(function () {
+        $.ajax({
+            url: "/Admin/Customer/GetPageCount",
+            data: { PageSize: pageSize },
+            success: function (response) {
+                pageCount = response;
+            }
+        });
+
+        loadPage();
+
+        $(".pager a:eq(0)").click(function () {
+            pageNo = 0;
+            loadPage();
+            return false;
+        });
+
+        $(".pager a:eq(1)").click(function () {
+            if (pageNo > 0) {
+                pageNo--;
+                loadPage();
+            }
+            return false;
+        });
+
+        $(".pager a:eq(2)").click(function () {
+            if (pageNo < pageCount - 1) {
+                pageNo++;
+                loadPage();
+            }
+            return false;
+        });
+
+        $(".pager a:eq(3)").click(function () {
+            pageNo = pageCount - 1;
+            loadPage();
+            return false;
+        });
+    });
+</script>

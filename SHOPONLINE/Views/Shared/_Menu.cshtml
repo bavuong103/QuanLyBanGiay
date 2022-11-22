@@ -1,0 +1,68 @@
+﻿
+<header id="header" class="header" style="position:fixed; height:100px;">
+    <section class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                    <div class="logo">
+                        <a href="/" title="Thế giới giày - Thích là mua - Mua là thích">
+                            <span style="width: 131px; height: 60px; display: inline-block; margin-left: 100px; background: url(../images/logo3.png) no-repeat -57px -3px;"></span>
+                        </a>
+                    </div><!--end: .logo-->
+                </div>
+                <!--Search-->
+                <div class="col-xs-12 col-sm-4 col-sm-pull-8">
+                    @Html.Partial("_Search")
+                    <div class="clear"></div>
+                </div>
+                <!--End Search-->
+                <div class="col-xs-12 col-sm-4">
+                    <div class="row">
+                        <div class="trend text-right">
+                            <div class="clear"></div>
+
+                        </div>
+                        <div class="em_area_cart text-right">
+                            @*thong tin gio hàng*@
+                            @Html.Partial("_CartInfo")
+                            <div class="widget widget-static-block " style="color:green">
+                                <span class="icon phone">&nbsp;</span><span>Hotline: </span>
+                                <span class="number"><strong>0985.xxx.xxx</strong></span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div><!--end: #header-right-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    <div class="wrapper_cart_search">
+        <div class="container cart_search_container">
+            <div class="inner_cart_search">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 em_area_menu alpha">
+                        <ul class="menu-top nav navbar-nav">
+                            <li class="menu i-31 selected"><a class="df" href="/" title="Trang Chủ" data-hover="Trang Chủ">Trang Chủ</a></li>
+                            <li class="menu i-26 "><a class="df" href="/" title="Giới thiệu" data-hover="Giới thiệu">Giới Thiệu</a></li>
+                            <li class="menu i-51 ">
+                                <a class="df" href="/" title="Sản phẩm" data-hover="Sản Phẩm">Sản Phẩm</a>
+                                <ul class="submenu i-51  df">
+                                    @foreach (var t in ViewBag.Categories)
+                                    {
+                                        <li class="menu i-27 ">
+                                            <a class="df" href="~/Product/ListByCategory/@t.Id" title="@t.NameVN" data-hover="/">@t.NameVN</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                            <li class="menu i-26 "><a class="df" href="/" title="Liên hệ" data-hover="Liên hệ">Liên Hệ</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="height10"></div>
+</header><!--end: #header-->

@@ -1,0 +1,243 @@
+﻿@model SHOPONLINE.Models.ShopOnline.Product
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/SiteLayout.cshtml";
+}
+<section class="content" style="padding-top:130px">
+    <div class="container">
+        <div class="product-detail product row">
+            <div id="content" class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="block-breadcrumb">
+                            <i class="fa fa-home"></i>
+                            <a class="df" title="Trang chủ" href="/Home/Index">Trang chủ</a>
+                            <i style="color:green">></i>
+                            <a class="df" title="ABC" href="/Product/ListByCategory/@Model.Category.Id">@Model.Category.NameVN</a>
+                            <i style="color:green">></i>
+                            <i class="df" title=@Model.Name>@Model.Name</i>
+                        </div>
+
+                        @*
+                        <style>
+                            #wrap-product {
+                                background-image: url(~/images/add.jpg) no-repeat top right 15px;
+                            }
+
+                            @@media (max-width: 767px) {
+                                #wrap-product {
+                                    background-image: url(~/images/add.jpg) no-repeat bottom right;
+                                }
+                            }
+                        </style>*@
+                        <div id="wrap-product" class="row">
+                            <div class="left_product_detail col-xs-12 col-sm-6">
+                                <div class="detail-thumb">
+                                    <a href="~/images/products/@Model.Image" class="fancybox"><img align="left" id="product_main_img_detail" src="~/images/products/@Model.Image" /></a>
+                                    <div class="clearfix"></div>
+                                    <!-- hàm phóng to hình ảnh-->>
+                                    <div class="zoom"><a href="~/images/products/@Model.Image" class="fancybox"><center><img src="/images/view_lager_img.png" /></center></a></div>
+                                </div><!--end: .detail-thumb-->
+
+                                <div class="height10"></div>
+                            </div><!--end: .left_product_detail-->
+                            <!--Chi tiết sản phẩm-->
+                            <div class="right_product_detail col-xs-12 col-sm-6">
+
+                                <!--Danh sách sản phẩm cùng thể loại: Hiển thị trong comboBox Xem nhanh-->
+                                <div class="nav_control">
+                                    <div class="all_post"><a href="/Product/ListByCategory/@Model.CategoryId"></a></div>
+                                    <div class="select_post_all">
+                                        <select id="quick_view" onchange="javascript:js_redir(this.value);">
+                                            <option value="0">Xem nhanh</option>
+                                            @foreach (SHOPONLINE.Models.ShopOnline.Product p  in ViewBag.Products)
+                                            {
+                                                <option value="/Product/Detail/@p.Id">@p.Name</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <script>function js_redir(e) { if (e != "0") window.location = e }</script>
+                                </div>
+                                <!--End: Danh sách sản phẩm cùng loại: Hiển thị trong comboBox Xem nhanh-->
+
+
+                                <h1 style="color:#0c8469">@Model.Name</h1>
+                                <div class="made">
+                                    <span>Đánh giá : </span> <span class="rating " style="text-align:center;">
+                                        <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="product_detail_content">
+                                    @Model.Description
+                                </div>
+
+                                <div class="prices">
+                                    <div class="title">Giá :</div><span id="product_price_label" class="price bold product_price_label">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"),"{0:n0}", @Model.UnitPrice) VNĐ</span>
+                                    <div class="the_tich">
+                                    </div>
+                                </div>
+                                <div class="quantity">Số lượng <input type="text" value="1" id="quantity" name="quantity" maxlength="3"></div>
+                                <a class="add-cart" data-id="358" data-add-to-cart="@Model.Id" title="Đặt hàng ngay">Mua sản phẩm này <i class="fa fa-shopping-cart"></i></a>
+                                <div class="height10"></div>
+                                <div class="call_center col-sx-12"><i class="fa fa-phone"></i>Tổng đài hỗ trợ: 0906.xxx.xxx</div>
+                            </div>
+                            <!--/End: Chi tiết sản phẩm-->
+
+                            <div class="clear"></div>
+                        </div><!--end: #wrap-product-->
+                        <hr>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-3 pull-right" style="position:static">
+                        <div id="barpro">
+                            <div class="committed">
+                                <h5 style="color:#0c8469"><b>ĐÃ MUA LÀ THÍCH</b></h5>
+
+                                <div class="quick_oder_product row">
+                                    <div class="other-product" style="background-color:rgba(150, 248, 8, 0.49)">
+                                        <div class="product-top">
+                                            <div class="thumb"><img align="left" id="product-thumb" src="~/images/products/@Model.Image" style="height:50%;width:50%" /></div>
+                                            <div class="title-top" style="color:#0c8469"><strong>@Model.Name</strong></div>
+                                            <div class="clearfix"></div>
+                                            <div class="prices">
+                                                <div class="clearfix"></div>
+                                                <div class="title">Giá:</div><span id="product_price_label" class="price bold product_price_label">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", @Model.UnitPrice) VNĐ</span>
+                                            </div>
+                                            <div class="made">
+                                                <span>Đánh giá : </span>
+                                                <span class="rating " style="text-align:center;">
+                                                    <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <div style="text-align:center"><a data-add-to-cart="@Model.Id" class="add-cart" title="Đặt hàng ngay">Mua ngay</a></div>
+                                            <div class="" style="padding-top:5px; color:green">
+                                                <span class="number"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> Hotline Tư vấn: </span>
+                                                <span class="number" style="color:green">0906.xxx.xxx</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Danh mục Categories-->
+                                <div class="topic-category panel panel-default">
+                                    <h4 class="topic-category-heading panel-heading">
+                                        <strong>DANH MỤC SẢN PHẨM</strong>
+                                    </h4>
+                                    <nav class="topic-category-list panel-body">
+                                        @foreach (SHOPONLINE.Models.ShopOnline.Category c in ViewBag.Categories)
+                                        {
+                                            <a href="/Product/ListByCategory/@c.Id">@c.NameVN</a>
+                                        }
+                                    </nav>
+                                </div>
+                                <!--End: Danh mục Categories-->
+                            </div>
+
+                            <div class="row">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div id="content-post"></div> @Model.Description
+                        <div class="height20"></div>
+                        <div class="fb-comments" data-href="/" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
+                        <script>
+                            (function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = "../connect.facebook.net/vi_VN/all.js#xfbml=1&appId=920430468041853";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="height20"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <!--Danh sách sản phẩm cùng loại-->
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div id="wrap-products">
+                    <div class="other-product">
+
+                        <div class="op-title">Sản phẩm được tìm kiếm tương tự <span>@Model.Name</span></div>
+                        <div class="op-content" style="height:400px">
+                            <div class="height15"></div>
+                            <ul class="ux-row-slider js-flickity slider-nav-small  slider-nav-reveal  slider-nav-push large-block-grid-4 small-block-grid-2 flickity-enabled is-draggable" data-flickity-options='{"cellAlign": "left", "wrapAround": true,"percentPosition": true,"imagesLoaded": true,"pageDots": false,"selectedAttraction" : 0.05,"friction": 0.6,"contain": true}'>
+                                @{
+                                    var count_sp = 0;
+                                }
+                                @foreach (SHOPONLINE.Models.ShopOnline.Product p in ViewBag.Products)
+                                {
+                                    if (p.Id != Model.Id)
+                                    {
+                                        count_sp += 1;
+                                        <li class="item col-xs-6 col-sm-3">
+                                            <div class="row">
+                                                <div class="product-item fl" style="width:80%">
+                                                    <a title=@p.Name class="thumb" href="/Product/Detail/@p.Id">
+                                                        <img alt=@p.Name style="height:100%; width:100%" src="~/images/products/@p.Image" onerror="this.src='/images/logo.png'" />
+                                                    </a>
+                                                    <h2 class="title df regular"><a title=@p.Name class="df" href="sa-chanh-lemongrass-pd358.html">@p.Name</a></h2>
+                                                    <div class="price">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:n0}", @p.UnitPrice) VNĐ </div>
+                                                    <div style="text-align:center;"><a class="add-cart" data-add-to-cart="@p.Id" title="Thêm vào giỏ">Đặt Hàng <i class="fa fa-shopping-cart"></i></a></div>
+                                                </div><!--end: .product-item-->
+                                            </div>
+                                        </li>
+                                    }
+                                    // Chỉ hiển thị mỗi lần 05 sản phẩm cùng loại
+                                    if (count_sp % 5 == 0)
+                                    {
+                                        break;
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <script>
+                            $('.ux-slider, .product-gallery-slider').on('cellSelect', function () {
+                                if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) { $(this).find('.ux_banner:not(.is-selected) .ux-banner-video').trigger('pause'); $(this).find('.ux_banner.is-selected .ux-banner-video').trigger('play'); }
+                                var height = $(this).find('.is-selected').outerHeight(); if (height) { $(this).find('.flickity-viewport').css('height', height); }
+                            });
+                            $('.ux-slider').on('dragStart', function () { $(this).addClass('is-dragging'); });
+                            $('.ux-slider').on('dragEnd', function () { $(this).removeClass('is-dragging'); });
+                            $('.ux-slider').on('settle', function () { setTimeout(function () { $('.ux-slider-wrapper .ux-loading').remove(); }, 1000); });
+                            $(window).resize(function () { $('.ux_banner.full-height').height($(window).height()); });
+                        </script>
+                    </div><!--end: .other-product-->
+                    <script>$(document).ready(function () { $('.product-sidebar').scrollToFixed({ marginTop: 0, limit: function () { var limit = $('footer').offset().top - $('.product-sidebar').outerHeight(true) - 10; return limit; }, minWidth: 1000, zIndex: 999, fixed: function () { }, dontCheckForPositionFixedSupport: true }); });</script>
+                </div>
+            </div>
+            <!--End: Danh sách sản phẩm cùng loại-->
+
+        </div>
+
+        <script>
+            $(function () {
+                $("a[data-add-to-cart]").click(function () {
+                    var pid = $(this).attr("data-add-to-cart");
+                    var pqty = $("#quantity").val();
+
+                    $.ajax({
+                        url: "/ShoppingCart/AddWithQuantity",
+                        data: { id: pid, qty: pqty },
+                        type: "post",
+                        success: function (response) {
+                            $(".nn-cart #count").html(response.Count);
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                jQuery('.fancybox').fancybox();
+                Number.prototype.format = function (e, t) { var n = "\\d(?=(\\d{" + (t || 3) + "})+" + (e > 0 ? "\\." : "$") + ")"; return this.toFixed(Math.max(0, ~~e)).replace(new RegExp(n, "g"), "$&.") };
+                $('.quick_oder_product').scrollToFixed({ marginTop: 130, limit: function () { var limit = $('#footer').offset().top; return limit; }, minWidth: 1000, zIndex: 999, fixed: function () { }, dontCheckForPositionFixedSupport: true });
+            });
+        </script>
+
+
+    </div>
+</section>

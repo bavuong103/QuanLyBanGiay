@@ -1,0 +1,180 @@
+﻿@model SHOPONLINE.Models.ShopOnline.Order
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order Manager</h2>
+
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#edit" aria-controls="home" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-edit"></span>
+                Edition
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#list" aria-controls="profile" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-list"></span>
+                List
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="edit">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Order Edition
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm())
+                    {
+                        if (!Html.ValidationSummary().ToString().Contains(":none"))
+                        {
+                            <div class="pull-right label label-danger">
+
+                                @Html.ValidationSummary()
+
+                            </div>
+                        }
+                        @Html.HiddenFor(m => m.Id, new { @class = "form-control", @readonly = true })
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                                <label>Customer</label>
+                                @Html.DropDownList("CustomerId", null, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label>OrderDate</label>
+                                @Html.TextBoxFor(m => m.OrderDate, "{0:MM/dd/yyyy}", new { @class = "form-control" })
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label>RequireDate</label>
+                                @Html.TextBoxFor(m => m.RequireDate, "{0:MM/dd/yyyy}", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                                <label>Receiver</label>
+                                @Html.TextBoxFor(m => m.Receiver, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label>Address</label>
+                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label>Amount</label>
+                                @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label>Description</label>
+                                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        if (Model != null && Model.OrderDetails.Count > 0) { 
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label>Order Details</label>
+                                <table class="table table-hover table-condensed table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Product</th>
+                                            <th>UnitPrice</th>
+                                            <th>Discount</th>
+                                            <th>Quantity</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var Item in Model.OrderDetails)
+                                        {
+                                            <tr>
+                                                <td>@Item.Id</td>
+                                                <td>@Item.Product.Name</td>
+                                                <td>@Item.UnitPrice</td>
+                                                <td>@Item.Discount</td>
+                                                <td>@Item.Quantity</td>
+                                                <td>@(Item.UnitPrice*Item.Quantity*(1-Item.Discount))</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        }
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <div class="text-center btn-crud">
+                                    <button class="btn btn-default" data-action="Update">Update</button>
+                                    <button class="btn btn-default" data-action="Delete">Delete</button>
+                                    <button class="btn btn-default" data-action="Index">Reset</button>
+                                </div>
+                            </div>
+                            <script>
+                                $(function () {
+                                    $("button[data-action]").click(function () {
+                                        var action = $(this).attr("data-action");
+                                        this.form.action = "/Admin/Order/" + action;
+                                    });
+                                });
+                            </script>
+                        </div>
+                    }
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Order List
+                    </h3>
+                </div>
+                <table class="table table-hover table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Customer</th>
+                            <th>OrderDate</th>
+                            <th>RequireDate</th>
+                            <th>Receiver</th>
+                            <th>Address</th>
+                            <th>Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SHOPONLINE.Models.ShopOnline.Order Item in ViewBag.Items)
+                        {
+                            <tr>
+                                <td>@Item.Id</td>
+                                <td>@Item.CustomerId</td>
+                                <td>@Item.OrderDate</td>
+                                <td>@Item.RequireDate</td>
+                                <td>@Item.Receiver</td>
+                                <td>@Item.Address</td>
+                                <td>@Item.Amount</td>
+                                <td>
+                                    <a class="btn btn-sm btn-danger" href="/Admin/Order/Edit/@Item.Id"><span class="glyphicon glyphicon-edit"></span></a>
+                                    <a class="btn btn-sm btn-warning" href="/Admin/Order/Delete/@Item.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>

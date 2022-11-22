@@ -1,0 +1,126 @@
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.csproj.CoreCompileInputs.cache
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorAssemblyInfo.cache
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorAssemblyInfo.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.AssemblyInfoInputs.cache
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.AssemblyInfo.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.TagHelpers.input.cache
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.TagHelpers.output.cache
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorCoreGenerate.cache
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Category\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Customer\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Customer\_List.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Inventory\Inventory.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\MasterRole\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Master\Change.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Master\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Master\Login.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Order\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Product\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Revenue\Revenue.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Role\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Shared\_Layout.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Supplier\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\WebActionRole\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\WebAction\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Order\Checkout.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Order\OrderSuccess.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Product\ProductDetail.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Product\ProductList.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Product\ProductSearch.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\HomeLayout.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\SiteLayout.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CartInfo.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Footer.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Menu.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Search.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_SlideShow.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\ShoppingCart\Index.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorTargetAssemblyInfo.cache
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorTargetAssemblyInfo.cs
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.dll
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.pdb
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.deps.json
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.runtimeconfig.json
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.runtimeconfig.dev.json
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.dll
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.pdb
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.Views.dll
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.Views.pdb
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.Views.pdb
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.csproj.CopyComplete
+D:\HUU TAI\1. Freelancer\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.deps.json
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.runtimeconfig.json
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.dll
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.pdb
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.Views.dll
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\bin\Debug\netcoreapp2.1\SHOPONLINE.Views.pdb
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.AssemblyInfo.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorAssemblyInfo.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorAssemblyInfo.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.TagHelpers.input.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.TagHelpers.output.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorCoreGenerate.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Category\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Customer\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Customer\_List.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Inventory\Inventory.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\MasterRole\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Master\Change.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Master\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Master\Login.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Order\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Product\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Revenue\Revenue.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Role\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\Supplier\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\WebActionRole\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Areas\admin\Views\WebAction\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Order\Checkout.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Order\OrderSuccess.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Product\ProductDetail.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Product\ProductList.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Product\ProductSearch.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\HomeLayout.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\SiteLayout.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CartInfo.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Footer.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Menu.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Search.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_SlideShow.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.RazorTargetAssemblyInfo.cs
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.Views.pdb
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.dll
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.pdb
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.genruntimeconfig.cache
+C:\Users\Admin\Desktop\8. ASP.NET CORE MVC\SHOPONLINE\SHOPONLINE\obj\Debug\netcoreapp2.1\SHOPONLINE.csproj.CopyComplete

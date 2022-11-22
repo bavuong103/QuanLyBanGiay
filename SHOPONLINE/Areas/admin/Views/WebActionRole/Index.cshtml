@@ -1,0 +1,74 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-briefcase"></span>
+            Permission Manager
+        </h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label>Role</label>
+                @Html.DropDownList("RoleId", null, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Web Actions</label>
+                <ul class="list-unstyled">
+                    @foreach (SHOPONLINE.Models.ShopOnline.WebAction a in ViewBag.WebActions)
+                    {
+                        <li class="col-sm-3">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="@a.Id" /> @a.Name
+                            </label>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-default nn-checkall">
+            <span class="glyphicon glyphicon-check"></span> Check All
+        </button>
+        <button class="btn btn-default nn-clearall">
+            <span class="glyphicon glyphicon-unchecked"></span> Clear All
+        </button>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#RoleId").change(function () {
+            var roleId = $(this).val();
+            $.ajax({
+                url: "/Admin/WebActionRole/GetActions",
+                data: { RoleId: roleId },
+                success: function (response) {
+                    $(":checkbox").prop("checked", false);
+                    $(response).each(function (index, item) {
+                        $(":checkbox[value=" + item + "]").prop("checked", true);
+                    });
+                }
+            });
+        });
+        $("#RoleId").change();
+
+        $(":checkbox").click(function () {
+            var roleId = $("#RoleId").val();
+            var actionId = $(this).val();
+            var status = $(this).prop("checked");
+            $.ajax({
+                url: "/Admin/WebActionRole/Update",
+                data: { roleId: roleId, actionId: actionId, status: status }
+            });
+        });
+
+        $(".nn-checkall").click(function () {
+            $(":checkbox:not(:checked)").click();
+        });
+        $(".nn-clearall").click(function () {
+            $(":checked").click();
+        });
+    });
+</script>

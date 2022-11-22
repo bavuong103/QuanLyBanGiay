@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor httpContextAccessor
+
+@{ 
+    var count = 0;
+    var items = SessionHelper.GetObjectFromJson<List<Item>>(@httpContextAccessor.HttpContext.Session, "cart");
+    if (items != null)
+    {
+        count = items.Sum(p => p.Quantity);
+    }
+}
+<div class="nn-cart">
+    <div class="dropdown-cart-content ">
+        <div class="block block-cart-top">
+            <a class="amount btn btn-icon btn-block" style=" margin: 0 0 0 10px;" href="/ShoppingCart/Index">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="badge badge-danger" id="count">@count</span>
+            </a>
+        </div>
+    </div>
+</div>

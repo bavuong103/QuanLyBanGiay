@@ -1,0 +1,116 @@
+﻿@model SHOPONLINE.Models.ShopOnline.Category
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Category Manager</h2>
+
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#edit" aria-controls="home" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-edit"></span>
+                Edition
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#list" aria-controls="profile" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-list"></span>
+                List
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="edit">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Category Edition
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm())
+                    {
+                        if (!Html.ValidationSummary().ToString().Contains(":none"))
+                        {
+                            <div class="pull-right label label-danger">
+
+                                @Html.ValidationSummary()
+
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label>Id</label>
+                            @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = true })
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Name VN</label>
+                            @Html.TextBoxFor(m => m.NameVN, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <div class="text-center btn-crud">
+                                <button class="btn btn-default" data-action="Insert">Insert</button>
+                                <button class="btn btn-default" data-action="Update">Update</button>
+                                <button class="btn btn-default" data-action="Delete">Delete</button>
+                                <button class="btn btn-default" data-action="Index">Reset</button>
+                            </div>
+                            <script>
+                                $(function () {
+                                    $("button[data-action]").click(function () {
+                                        var action = $(this).attr("data-action");
+                                        this.form.action = "/Admin/Category/" + action;
+                                    });
+                                });
+                            </script>
+                        </div>
+                    }
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Category List
+                    </h3>
+                </div>
+                <table class="table table-hover table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Name VN</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SHOPONLINE.Models.ShopOnline.Category Item in ViewBag.Items)
+                        {
+                            <tr>
+                                <td>@Item.Id</td>
+                                <td>@Item.Name</td>
+                                <td>@Item.NameVN</td>
+                                <td>
+                                    <a class="btn btn-sm btn-danger" href="/Admin/Category/Edit/@Item.Id"><span class="glyphicon glyphicon-edit"></span></a>
+                                    <a class="btn btn-sm btn-warning" href="/Admin/Category/Delete/@Item.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>

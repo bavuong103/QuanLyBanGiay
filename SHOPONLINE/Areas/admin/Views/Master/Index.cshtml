@@ -1,0 +1,129 @@
+﻿@model SHOPONLINE.Models.ShopOnline.Master
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Master Manager</h2>
+
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#edit" aria-controls="home" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-edit"></span>
+                Edition
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#list" aria-controls="profile" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-list"></span>
+                List
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="edit">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Master Edition
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Index", "Master",
+                       FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        if (!Html.ValidationSummary().ToString().Contains(":none"))
+                        {
+                            <div class="pull-right label label-danger">
+
+                                @Html.ValidationSummary()
+
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label>Id</label>
+                            @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>FullName</label>
+                            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile</label>
+                            @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <div class="text-center btn-crud">
+                                <button class="btn btn-default" data-action="Insert">Insert</button>
+                                <button class="btn btn-default" data-action="Update">Update</button>
+                                <button class="btn btn-default" data-action="Delete">Delete</button>
+                                <button class="btn btn-default" data-action="Index">Reset</button>
+                            </div>
+                            <script>
+                                $(function () {
+                                    $("button[data-action]").click(function () {
+                                        var action = $(this).attr("data-action");
+                                        this.form.action = "/Admin/Master/" + action;
+                                    });
+                                });
+                            </script>
+                        </div>
+                    }
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Master List
+                    </h3>
+                </div>
+                <table class="table table-hover table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Password</th>
+                            <th>FullName</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SHOPONLINE.Models.ShopOnline.Master Item in ViewBag.Items)
+                        {
+                            <tr>
+                                <td>@Item.Id</td>
+                                <td>@Item.Password</td>
+                                <td>@Item.FullName</td>
+                                <td>@Item.Email</td>
+                                <td>@Item.Mobile</td>
+                                <td>
+                                    <a class="btn btn-sm btn-danger" href="/Admin/Master/Edit/@Item.Id"><span class="glyphicon glyphicon-edit"></span></a>
+                                    <a class="btn btn-sm btn-warning" href="/Admin/Master/Delete/@Item.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
